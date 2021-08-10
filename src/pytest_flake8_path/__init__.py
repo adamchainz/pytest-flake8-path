@@ -1,7 +1,7 @@
 import subprocess
 import sys
 from pathlib import Path
-from typing import Generator, List, Optional
+from typing import TYPE_CHECKING, Generator, List, Optional
 
 import pytest
 from _pytest.tmpdir import TempPathFactory
@@ -16,7 +16,11 @@ class Flake8Result:
         self.exit_code = exit_code
 
 
-BasePathType = type(Path())
+if TYPE_CHECKING:
+    BasePathType = Path
+else:
+    # Have to extend concrete type, which is determined in Path.__new__
+    BasePathType = type(Path())
 
 
 class Flake8Path(BasePathType):

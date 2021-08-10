@@ -19,6 +19,7 @@ class Flake8Result:
 if TYPE_CHECKING:
     BasePathType = Path
 else:
+    # Have to extend concrete type, which is determined in Path.__new__
     BasePathType = type(Path())
 
 

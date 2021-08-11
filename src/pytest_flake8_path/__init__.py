@@ -13,9 +13,9 @@ class Flake8Result:
         self.out_lines: List[str] = []
         for line in out.strip().splitlines():
             if ":" in line:
-                filename, *rest = line.split(":")
+                filename, rest = line.split(":", 1)
                 norm_filename = filename.replace("\\", "/")
-                self.out_lines.append("".join([norm_filename, *rest]))
+                self.out_lines.append(f"{norm_filename}:{rest}")
             else:
                 self.out_lines.append(line)
         self.err = err

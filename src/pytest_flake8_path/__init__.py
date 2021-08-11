@@ -10,7 +10,14 @@ from _pytest.tmpdir import TempPathFactory
 class Flake8Result:
     def __init__(self, out: str, err: str, exit_code: int) -> None:
         self.out = out
-        self.out_lines = out.strip().splitlines()
+        self.out_lines: List[str] = []
+        for line in out.strip().splitlines():
+            if ":" in line:
+                filename, *rest = line.split(":")
+                norm_filename = filename.replace("\\", "/")
+                self.out_lines.append("".join([norm_filename, *rest]))
+            else:
+                self.out_lines.append(line)
         self.err = err
         self.err_lines = err.strip().splitlines()
         self.exit_code = exit_code

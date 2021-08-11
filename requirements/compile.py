@@ -8,7 +8,7 @@ if __name__ == "__main__":
     os.chdir(Path(__file__).parent)
     os.environ["CUSTOM_COMPILE_COMMAND"] = "requirements/compile.py"
     os.environ.pop("PIP_REQUIRE_VIRTUALENV")
-    common_args = ["-m", "piptools", "compile", "--generate-hashes"] + sys.argv[1:]
+    common_args = ["-m", "piptools", "compile"] + sys.argv[1:]
     subprocess.run(
         ["python3.6", *common_args, "-o", "py36.txt"],
         check=True,

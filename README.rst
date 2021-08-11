@@ -100,6 +100,9 @@ The exit code that the flake8 run exited with.
 A list of individual lines of output, without trailing newlines.
 This is the most useful tool for making assertions against.
 
+On Windows, file paths are normalized into the Unix format (``\`` is replaced
+with ``/``). This allows test suites to run the same on all operating systems.
+
 For example, given a result you can check for a particular line being output:
 
 .. code-block:: python

@@ -2,6 +2,23 @@ from textwrap import dedent
 
 import flake8
 
+from pytest_flake8_path import Flake8Result
+
+
+def test_windows_path_normalization():
+    result = Flake8Result(
+        out=(
+            ".\\example.py:1:2: E221 multiple spaces before operator\n"
+            + "Flake8 is here!\n"
+        ),
+        err="",
+        exit_code=0,
+    )
+    assert result.out_lines == [
+        "./example.py:1:2: E221 multiple spaces before operator",
+        "Flake8 is here!",
+    ]
+
 
 def test_simple_run(flake8_path):
     (flake8_path / "example.py").write_text("x  = 1\n")

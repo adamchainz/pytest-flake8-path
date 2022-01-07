@@ -48,8 +48,9 @@ class Flake8Path(BasePathType):
         process = subprocess.run(
             args=args,
             cwd=str(self),
-            capture_output=True,
-            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            universal_newlines=True,
         )
         return Flake8Result(
             out=process.stdout,

@@ -1,8 +1,12 @@
+import os
 from textwrap import dedent
 
 import flake8
 
 from pytest_flake8_path import Flake8Result
+
+# Prevent Flake8 from running in dev mode because it returns some problems
+os.environ.pop("PYTHONDEVMODE", None)
 
 
 def test_windows_path_normalization():

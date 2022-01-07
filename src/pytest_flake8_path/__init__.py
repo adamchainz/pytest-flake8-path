@@ -45,22 +45,16 @@ class Flake8Path(BasePathType):
         if extra_args:
             args.extend(extra_args)
 
-        process = subprocess.Popen(
+        process = subprocess.run(
             args=args,
             cwd=str(self),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             universal_newlines=True,
         )
-        process.wait()
-
-        # type narrowing
-        assert process.stdout is not None
-        assert process.stderr is not None
-
         return Flake8Result(
-            out=process.stdout.read(),
-            err=process.stderr.read(),
+            out=process.stdout,
+            err=process.stderr,
             exit_code=process.returncode,
         )
 

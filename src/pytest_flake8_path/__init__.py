@@ -1,7 +1,9 @@
+from __future__ import annotations
+
 import subprocess
 import sys
 from pathlib import Path
-from typing import TYPE_CHECKING, Generator, List, Optional
+from typing import TYPE_CHECKING, Generator
 
 import pytest
 from _pytest.tmpdir import TempPathFactory
@@ -10,7 +12,7 @@ from _pytest.tmpdir import TempPathFactory
 class Flake8Result:
     def __init__(self, out: str, err: str, exit_code: int) -> None:
         self.out = out
-        self.out_lines: List[str] = []
+        self.out_lines: list[str] = []
         for line in out.strip().splitlines():
             if ":" in line:
                 filename, rest = line.split(":", 1)
@@ -31,7 +33,7 @@ else:
 
 
 class Flake8Path(BasePathType):
-    def run_flake8(self, extra_args: Optional[List[str]] = None) -> Flake8Result:
+    def run_flake8(self, extra_args: list[str] | None = None) -> Flake8Result:
         args = [
             sys.executable,
             "-m",

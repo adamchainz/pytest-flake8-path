@@ -39,7 +39,7 @@ Use **pip**:
 
     python -m pip install pytest-flake8-path
 
-Python 3.7 to 3.10 supported.
+Python 3.7 to 3.11 supported.
 
 ----
 

@@ -3,7 +3,8 @@ from __future__ import annotations
 import subprocess
 import sys
 from pathlib import Path
-from typing import TYPE_CHECKING, Generator
+from typing import Generator
+from typing import TYPE_CHECKING
 
 import pytest
 from _pytest.tmpdir import TempPathFactory

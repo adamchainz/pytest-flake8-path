@@ -2,7 +2,7 @@
 pytest-flake8-path
 ==================
 
-.. image:: https://img.shields.io/github/workflow/status/adamchainz/pytest-flake8-path/CI/main?style=for-the-badge
+.. image:: https://img.shields.io/github/actions/workflow/status/adamchainz/pytest-flake8-path/main.yml?branch=main&style=for-the-badge
    :target: https://github.com/adamchainz/pytest-flake8-path/actions?workflow=CI
 
 .. image:: https://img.shields.io/pypi/v/pytest-flake8-path.svg?style=for-the-badge

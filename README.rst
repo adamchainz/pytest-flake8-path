@@ -30,6 +30,13 @@ A quick example:
             "./example.py:1:2: E221 multiple spaces before operator"
         ]
 
+----
+
+**Working on a Django project?**
+Check out my book `Speed Up Your Django Tests <https://adamchainz.gumroad.com/l/suydt>`__ which covers loads of ways to write faster, more accurate tests.
+
+----
+
 Installation
 ============
 
@@ -40,13 +47,6 @@ Use **pip**:
     python -m pip install pytest-flake8-path
 
 Python 3.8 to 3.12 supported.
-
-----
-
-**Working on a Django project?**
-Check out my book `Speed Up Your Django Tests <https://adamchainz.gumroad.com/l/suydt>`__ which covers loads of ways to write faster, more accurate tests.
-
-----
 
 API
 ===

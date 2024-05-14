@@ -8,13 +8,15 @@ requires = [
 name = "pytest-flake8-path"
 version = "1.5.0"
 description = "A pytest fixture for testing flake8 plugins."
-readme = {file = "README.rst", content-type = "text/x-rst"}
+readme = { file = "README.rst", content-type = "text/x-rst" }
 keywords = [
   "flake8",
   "pytest",
 ]
-license = {text = "MIT"}
-authors = [{name = "Adam Johnson", email = "me@adamj.eu"}]
+license = { text = "MIT" }
+authors = [
+  { name = "Adam Johnson", email = "me@adamj.eu" },
+]
 requires-python = ">=3.8"
 classifiers = [
   "Development Status :: 5 - Production/Stable",
@@ -35,13 +37,12 @@ dependencies = [
   "flake8",
   "pytest",
 ]
-urls = {Changelog = "https://github.com/adamchainz/pytest-flake8-path/blob/main/CHANGELOG.rst",Funding = "https://adamj.eu/books/",Repository = "https://github.com/adamchainz/pytest-flake8-path"}
-[project.entry-points.pytest11]
-flake8_path = "pytest_flake8_path"
+urls = { Changelog = "https://github.com/adamchainz/pytest-flake8-path/blob/main/CHANGELOG.rst", Funding = "https://adamj.eu/books/", Repository = "https://github.com/adamchainz/pytest-flake8-path" }
+entry-points.pytest11.flake8_path = "pytest_flake8_path"
 
 [tool.isort]
 add_imports = [
-    "from __future__ import annotations"
+  "from __future__ import annotations",
 ]
 force_single_line = true
 profile = "black"

@@ -8,12 +8,11 @@ requires = [
 name = "pytest-flake8-path"
 version = "1.5.0"
 description = "A pytest fixture for testing flake8 plugins."
-readme = { file = "README.rst", content-type = "text/x-rst" }
+readme = "README.rst"
 keywords = [
   "flake8",
   "pytest",
 ]
-license = { text = "MIT" }
 authors = [
   { name = "Adam Johnson", email = "me@adamj.eu" },
 ]

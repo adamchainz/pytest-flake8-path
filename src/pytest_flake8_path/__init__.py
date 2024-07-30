@@ -62,7 +62,7 @@ class Flake8Path(BasePathType):
 
 
 @pytest.fixture
-def flake8_path(tmp_path_factory: TempPathFactory) -> Generator[Flake8Path, None, None]:
+def flake8_path(tmp_path_factory: TempPathFactory) -> Generator[Flake8Path]:
     path = Flake8Path(tmp_path_factory.mktemp("flake8_path"))
     (path / "setup.cfg").write_text("[flake8]\n")
     yield path

@@ -46,7 +46,7 @@ Use **pip**:
 
     python -m pip install pytest-flake8-path
 
-Python 3.8 to 3.12 supported.
+Python 3.8 to 3.13 supported.
 
 API
 ===

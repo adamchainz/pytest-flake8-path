@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import subprocess
 import sys
+from collections.abc import Generator
 from pathlib import Path
 from typing import TYPE_CHECKING
-from typing import Generator
 
 import pytest
 from _pytest.tmpdir import TempPathFactory
